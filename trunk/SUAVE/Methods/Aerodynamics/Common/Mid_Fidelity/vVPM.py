@@ -15,7 +15,7 @@ from SUAVE.Methods.Aerodynamics.Common.Mid_Fidelity.discretize_vortex_particles 
 from SUAVE.Methods.Aerodynamics.Common.Mid_Fidelity.compute_particle_induced_velocities      import compute_particle_induced_velocities
 from SUAVE.Methods.Aerodynamics.Common.Mid_Fidelity.update_particle_positions                import update_particle_positions
 from SUAVE.Methods.Aerodynamics.Common.Mid_Fidelity.vorticity_evolution                      import vorticity_evolution
-from SUAVE.Methods.Aerodynamics.Common.Fidelity_Zero.Lift.generate_wing_vortex_distribution  import generate_wing_vortex_distribution
+from SUAVE.Methods.Aerodynamics.Common.Mid_Fidelity.generate_surface_vortex_distribution  import generate_surface_vortex_distribution
 
 # Four functions to calculate the induced velocity, the vortex stretching term, the diffusion term and udating the circulation strength after each time step
 
@@ -37,7 +37,7 @@ def vVPM(conditions,settings,geometry):
     N_particles = 100
     
     # generate vortex distribution on the surface
-    VD   = generate_wing_vortex_distribution(geometry,settings)  
+    VD   = generate_surface_vortex_distribution(geometry,settings)  
     
     # Define the control point locations on wing:
     x = VD.XC 
